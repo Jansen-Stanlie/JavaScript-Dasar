@@ -125,6 +125,8 @@ var angkot1 = new Angkot("jansen",["Pinang baris","Medan Mall"],
     [],0);
 var angkot2 = new Angkot("stanlie",["Belawan","Thamrin"],
     [],0);
+var angkot3 = new Angkot("stanlie ganteng",["Belawan","Thamrin"],
+    [],0);
 console.log(angkot1);
 console.log(angkot2);
 
