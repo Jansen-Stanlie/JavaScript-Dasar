@@ -99,3 +99,75 @@ const p2New = document.querySelector(".p2");
 // console.log(p2New);
 p2New.classList.toggle("label");
 console.log("toggle", p2New);
+
+/*
+    TODO: DOM Manipulation part 2 (manipulation node)
+    * document.createElement()
+    * document.createTextNode()
+    * node.appendchild()
+    * node.insertBefore()
+    * parentNode.removeChild()
+    * parentNode.replaceChild(), ..etc
+*/
+const paraBaru = document.createElement("p");
+let textParaBaru = document.createTextNode("paragraf baru");
+
+//save text into paragraf
+paraBaru.appendChild(textParaBaru);
+
+const sectionAbaru = document.getElementById("a");
+
+sectionAbaru.appendChild(paraBaru);
+
+const liBaru = document.createElement("li");
+const teksLiBaru = document.createTextNode("makan dong");
+
+liBaru.appendChild(teksLiBaru);
+
+const liLama = document.querySelector("section#b ul");
+const li2Baru = liLama.querySelector("li:nth-child(2)");
+// liLama.appendChild(li2Baru.appendChild(liBaru));
+liLama.insertBefore(liBaru,li2Baru);
+
+const link = document.getElementsByTagName("a")[0];
+
+sectionA.removeChild(link);
+
+const sectionBnew = document.getElementById("b");
+const p4old = sectionBnew.querySelector("p");
+
+const h2Baru = document.createElement("h2");
+const textH2Baru = document.createTextNode("Makan lur");
+
+h2Baru.appendChild(textH2Baru);
+
+sectionBnew.replaceChild(h2Baru,p4old);
+
+/*
+ * DOM EVENT
+ * mouse event, keyboard event, etc
+ * addEventListener();
+ * event Handler (inline HTML attribute, element Method)
+ * example of event Handler (on<event>/onCLick)
+ */
+const p3Event = document.querySelector(".p3");
+
+
+ubahWarna = () =>{
+    p3Event.style.backgroundColor="red";
+}
+function ubahWarnap2(){
+    p2Eve.style.backgroundColor="red";
+}
+
+const p2Eve = document.querySelector(".p2");
+p2Eve.onclick = ubahWarnap2;
+
+const p1Eve = document.querySelector(".p1");
+p1Eve.addEventListener("mouseenter",function (){
+    const ul = document.querySelector("section#b ul");
+    const liBaru = document.createElement("li");
+    const textliBaru = document.createTextNode("Makan lagi lur");
+    liBaru.appendChild(textliBaru);
+    ul.appendChild(liBaru);
+})
