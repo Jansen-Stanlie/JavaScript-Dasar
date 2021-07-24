@@ -170,4 +170,9 @@ p1Eve.addEventListener("mouseenter",function (){
     const textliBaru = document.createTextNode("Makan lagi lur");
     liBaru.appendChild(textliBaru);
     ul.appendChild(liBaru);
-})
+});
+
+
+/*
+ * DOM Transversal
+ */
