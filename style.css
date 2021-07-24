@@ -31,7 +31,9 @@ body {
     border-radius: 50%;
     position: relative;
 }
-
+.card a{
+    text-decoration: none;
+}
 .card .nama, .card .telp {
     display: block;
     line-height: 20px;

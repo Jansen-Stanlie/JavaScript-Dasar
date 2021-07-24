@@ -6,6 +6,7 @@
  * nextElementSibling => element
  * previousSibling => node
  * previousElementSibling => element
+ * prevent default
  */
 
 //Event Handling
@@ -25,11 +26,30 @@ console.log(close);
 //     })
 // };
 
-close.forEach(function (el){
-    el.addEventListener("click",function (e){
-        e.target.parentElement.style.display="none";
-    });
-});
+// close.forEach(function (el){
+//     el.addEventListener("click",function (e){
+//         e.target.parentElement.style.display="none";
+//         e.preventDefault();
+//         e.stopPropagation();
+//     });
+// });
+const container = document.querySelector(".container");
 
-const nama = document.querySelector(".nama");
-console.log(nama.nextElementSibling.nextElementSibling);
+container.addEventListener("click",function (e){
+    if(e.target.className == "close"){
+        e.target.parentElement.style.display ="none";
+        e.preventDefault();
+        e.stopPropagation();
+    }
+})
+// const nama = document.querySelector(".nama");
+// console.log(nama.nextElementSibling.nextElementSibling);
+
+// !event bubbling
+const cards = document.querySelectorAll(".card");
+cards.forEach(function (card){
+   card.addEventListener("click",function (e){
+       alert("OK");
+   });
+});
+console.log("cards",cards);
